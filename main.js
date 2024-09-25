@@ -47,11 +47,11 @@ function animateWave() {
   for (let index = 0; index < canvasScreen.width; index++) {
     canvasContext.lineTo(
       index,
-      wave.y + Math.tan(index * wave.length + increment) * wave.amplitude * Math.tan(increment),
+      wave.y + Math.sin(index * wave.length + increment) * wave.amplitude * Math.sin(increment),
     );
   }
 
-  canvasContext.strokeStyle = `hsl(${Math.abs(strokeColors.h * Math.tan(increment))}, ${
+  canvasContext.strokeStyle = `hsl(${Math.abs(strokeColors.h * Math.sin(increment))}, ${
     strokeColors.s
   }%, ${strokeColors.l}%)`;
   canvasContext.lineWidth = 1.4
